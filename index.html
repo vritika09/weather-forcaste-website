@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Raleway:ital,wght@0,100;1,300&family=Roboto+Condensed:ital,wght@0,300;1,400&family=Roboto:wght@300&family=Source+Sans+Pro:ital,wght@1,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="./script.js" defer></script>
+  <title>Weather App</title>
+</head>
+
+<body>
+
+  <div class="card">
+    <div class="search">
+      <input type="text" class="search-box" placeholder="Search Your City">
+      <button><i class="fa fa-search fa-x"></i></button>
+    </div>
+    <div class="weather loading">
+      <h2 class="city">Weather in Danver</h2>
+      <div id="currentDateTime"></div>
+      <p><span id="datetime"></span></p>
+      <h1 class="temp">51°C</h1>
+      <div class="flex">
+        <img src="http://openweathermap.org/img/wn/04n.png" alt="" class="icon" />
+        <div class="description">Cloudy</div>
+      </div>
+      <div class="humidity">Humidity: 60%</div>
+      <div class="wind">Wind speed: 6.2km/h</div>
+    </div>
+   <a href="./future_forecast.html"> <button type="button" class="btn btn-info" id="button">More Details</button></a>
+  </div>
+
+  <script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " || " + (("0" + dt.getHours()).slice(-2)) + "." + (("0" + dt.getMinutes()).slice(-2));
+  </script>
+
+</body>
+
+</html>
